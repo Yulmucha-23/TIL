@@ -1,0 +1,163 @@
+/* 1. 기본 배경 및 폰트 설정 */
+body {
+  background-color: #f5f6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+}
+
+/* 2. 전체 레이아웃 (언어 선택창의 기준점) */
+.login-wrapper {
+  width: 460px;
+  position: relative; /* 언어 선택창 위치를 잡기 위해 필수 */
+}
+
+/* 3. 언어 선택 (오른쪽 상단 배치) */
+.lang-selection {
+  position: absolute;
+  top: -45px; /* 로고보다 위로 배치 */
+  right: 0; /* 오른쪽 끝 정렬 */
+}
+
+.lang-selection select {
+  border: 1px solid #ccc;
+  background-color: transparent;
+  padding: 5px;
+  font-size: 12px;
+  color: #666;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* 4. 네이버 로고 */
+.logo {
+  text-align: center;
+  color: #03c75a;
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* 5. 상단 탭 메뉴 */
+.tab-menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: #f8f9fa;
+  border: 1px solid #dadada;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-menu li {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  color: #777;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 활성화된 탭 스타일 */
+.tab-menu li.active {
+  background-color: white;
+  color: #03c75a;
+  font-weight: bold;
+  border-bottom: 2px solid #03c75a;
+}
+
+/* 6. 로그인 박스 및 입력창 */
+.login-box {
+  background-color: white;
+  padding: 30px;
+  border: 1px solid #dadada;
+  border-radius: 0 0 5px 5px;
+}
+
+.input-row {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* X버튼과 눈 모양 아이콘 스타일 */
+.btn-clear,
+.btn-view {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* 7. 로그인 버튼 */
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  background-color: #03c75a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 8. 탭 콘텐츠 숨김/보임 처리 */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* 일회용 번호 안내 문구 */
+.info-text {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.green {
+  color: #03c75a;
+  font-weight: bold;
+}
+
+/* 9. 하단 링크 (비번찾기 등) */
+.bottom-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.bottom-links a {
+  text-decoration: none;
+  color: #888;
+}
+
+.bottom-links .bar {
+  color: #dadada;
+  margin: 0 10px;
+}

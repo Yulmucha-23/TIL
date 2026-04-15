@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네이버 : 로그인</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="lang-selection">
+        <select>
+          <option>한국어</option>
+          <option>English</option>
+          <option>中文(简体)</option>
+          <option>中文(繁體)</option>
+        </select>
+      </div>
+
+      <header>
+        <h1 class="logo">NAVER</h1>
+      </header>
+
+      <!-- 탭 메뉴 -->
+      <ul class="tab-menu">
+        <li id="tab-id" class="active" onclick="showTab('id-login')">
+          ID/전화번호
+        </li>
+        <li id="tab-otp" onclick="showTab('otp-login')">일회용 번호</li>
+        <li id="tab-qr" onclick="showTab('qr-login')">QR코드</li>
+      </ul>
+
+      <main class="login-box">
+        <!-- 1. ID 로그인 화면 (처음엔 보임) -->
+        <div id="id-login" class="tab-content active">
+          <input type="text" placeholder="아이디 또는 전화번호" />
+          <input type="password" placeholder="비밀번호" />
+        </div>
+
+        <!-- 2. 일회용 번호 화면 (처음엔 숨김) -->
+        <div id="otp-login" class="tab-content">
+          <div class="info-text">
+            <p>
+              네이버앱의 <strong>메뉴 > 설정 ⚙️ > 로그인 아이디 관리 ></strong>
+            </p>
+            <p class="sub-info">
+              <span class="green">더보기 : </span> > 일회용 로그인 번호에 보이는
+              번호를 입력해 주세요. ❓
+            </p>
+          </div>
+          <input type="text" placeholder="번호를 입력하세요" />
+        </div>
+
+        <!-- 3. QR코드 화면 (처음엔 숨김) -->
+        <div id="qr-login" class="tab-content">
+          <p style="text-align: center; padding: 20px">
+            QR코드를 스캔하여 로그인하세요.
+          </p>
+        </div>
+
+        <button type="button" class="btn-login">로그인</button>
+      </main>
+    </div>
+
+    <script>
+      function showTab(tabId) {
+        // 모든 내용 숨기기
+        const contents = document.querySelectorAll(".tab-content");
+        contents.forEach((c) => c.classList.remove("active"));
+
+        // 모든 탭 초록색 강조 끄기
+        const tabs = document.querySelectorAll(".tab-menu li");
+        tabs.forEach((t) => t.classList.remove("active"));
+
+        // 선택한 것만 보여주고 강조하기
+        document.getElementById(tabId).classList.add("active");
+        event.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
